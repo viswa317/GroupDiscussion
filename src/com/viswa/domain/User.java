@@ -101,6 +101,30 @@ public class User {
 		this.password = newPassword;
 	}
 
+	public String getUserName() {
+		return userName;
+	}
+
+	protected void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public Set<Role> getRoles() {
+		return roles;
+	}
+
+	protected void setRoles(Set<Role> roles) {
+		this.roles = roles;
+	}
+
+	public Set<Community> getCommunities() {
+		return communities;
+	}
+
+	protected void setCommunities(Set<Community> communities) {
+		this.communities = communities;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;

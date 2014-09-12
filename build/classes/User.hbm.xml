@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.viswa.domain">
+<class name="User" table="user">
+        <id name="id" unsaved-value="-1">
+            <generator class="native"/>
+        </id>
+        <property name="firstName" column="first_name"/>
+        <property name="lastName" column="last_name"/>
+        <property name="url" column="url"/>
+        <property name="emailId" column="email_id"/>
+        <property name="password" column="password"/>
+        <property name="userName" column="user_name"/>
+        
+        <set name="roles" table="user_role" lazy="false" cascade="all">
+        	<key column="user_id"/>
+        	<many-to-many column="role_id" class="Role" fetch="join"/>
+        </set>
+        <set name="communities" table="user_community" cascade="all">
+        	<key column="user_id"/>
+        	<many-to-many column="community_id" class="Community" fetch="select"/>
+        </set>
+</class>
+</hibernate-mapping>

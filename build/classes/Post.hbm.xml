@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.viswa.domain">
+<class name="Post" table="post">
+        <id name="id" unsaved-value="-1">
+            <generator class="native"/>
+        </id>
+        <property name="postText" column="post_text"/>
+        <property name="createdDate" column="created_date"/>
+		<many-to-one name="owner" class="com.viswa.domain.User"
+			column="owner_id" lazy="false" not-null="true" />
+		<many-to-one name="discussion" class="com.viswa.domain.Discussion"
+			column="discussion_id"  lazy="false" not-null="true"/>
+
+</class>
+</hibernate-mapping>

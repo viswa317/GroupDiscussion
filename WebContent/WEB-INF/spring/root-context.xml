@@ -15,8 +15,8 @@
 		<property name="url"
 			value="jdbc:mysql://localhost:3306/group_discussion?autoreconnect=true">
 		</property>
-		<property name="username" value="glosante"></property>
-		<property name="password" value="glosante"></property>
+		<property name="username" value="root"></property>
+		<property name="password" value="viswa"></property>
 	</bean>
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
@@ -26,6 +26,9 @@
 			<value>User.hbm.xml</value>
 			<value>Role.hbm.xml</value>	
 			<value>Feature.hbm.xml</value>	
+			<value>Community.hbm.xml</value>	
+			<value>Discussion.hbm.xml</value>	
+			<value>Post.hbm.xml</value>	
 		</list>
 		</property>
 	
@@ -33,6 +36,7 @@
 			<props>
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
 				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
 			</props>
 		</property>
 	</bean>

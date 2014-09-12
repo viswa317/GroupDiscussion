@@ -11,7 +11,8 @@ public class Discussion {
 	private Date createdDate;
 	private User owner;
 	private Set<Post> posts = new HashSet<Post>();
-
+	private Community community;
+	
 	protected Discussion() {
 		super();
 		this.id = -1;
@@ -64,6 +65,22 @@ public class Discussion {
 		return this.posts.remove(post);
 	}
 	
+	public Set<Post> getPosts() {
+		return posts;
+	}
+
+	protected void setPosts(Set<Post> posts) {
+		this.posts = posts;
+	}
+
+	public Community getCommunity() {
+		return community;
+	}
+
+	protected void setCommunity(Community community) {
+		this.community = community;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;

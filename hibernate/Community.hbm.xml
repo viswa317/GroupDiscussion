@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.viswa.domain">
+<class name="Community" table="community">
+        <id name="id" unsaved-value="-1">
+            <generator class="native"/>
+        </id>
+        <property name="communityName" column="community_name"/>
+		<many-to-one name="owner" class="com.viswa.domain.User"
+			column="owner_id" lazy="false" not-null="true" />
+        <property name="createdDate" column="created_date"/>
+        <set name="members" table="user_community">
+        	<key column="community_id"/>
+        	<many-to-many column="user_id" class="User" fetch="select"/>
+        </set>
+		<set name="discussions" table="discussion" fetch="select">
+			<key>
+				<column name="community_id" not-null="true" />
+			</key>
+			<one-to-many class="com.viswa.domain.Discussion" />
+		</set>
+
+</class>
+</hibernate-mapping>

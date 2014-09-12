@@ -73,6 +73,22 @@ public class Community {
 		return this.members.remove(user);
 	}
 
+	public Set<User> getMembers() {
+		return members;
+	}
+
+	protected void setMembers(Set<User> members) {
+		this.members = members;
+	}
+
+	public Set<Discussion> getDiscussions() {
+		return discussions;
+	}
+
+	protected void setDiscussions(Set<Discussion> discussions) {
+		this.discussions = discussions;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
