@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>${message}</h1>
-<a href="user/create">Register</a>
+
 </body>
 </html>
