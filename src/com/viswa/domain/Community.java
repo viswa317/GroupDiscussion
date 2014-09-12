@@ -6,12 +6,14 @@ import java.util.Set;
 
 public class Community {
 	
-	private long id;
 	private User owner;
 	private Date createdDate;
 	private String communityName;
 	private Set<User> members = new HashSet<User>();
 	private Set<Discussion> discussions = new HashSet<Discussion>();
+
+	//For Hibernate
+	private long id = -1;
 
 	protected Community() {
 		super();

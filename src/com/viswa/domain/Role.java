@@ -2,9 +2,11 @@ package com.viswa.domain;
 
 public class Role {
 
-	private long id;
 	private String roleName;
 	
+	//For Hibernate
+	private long id = -1;
+
 	protected Role(){
 		super();
 		this.id = -1;

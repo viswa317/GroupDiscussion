@@ -4,7 +4,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class User {
-	private long id;
 	private String firstName;
 	private String lastName;
 	private String url;
@@ -14,6 +13,9 @@ public class User {
 	private Set<Role> roles = new HashSet<Role>();
 	private Set<Community> communities = new HashSet<Community>();
 	
+	//For Hibernate
+	private long id = -1;
+
 	protected User() {
 		super();
 		this.id = -1;

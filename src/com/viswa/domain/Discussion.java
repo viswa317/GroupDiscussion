@@ -6,13 +6,15 @@ import java.util.Set;
 
 public class Discussion {
 
-	private long id;
 	private String topic;
 	private Date createdDate;
 	private User owner;
 	private Set<Post> posts = new HashSet<Post>();
 	private Community community;
 	
+	//For Hibernate
+	private long id = -1;
+
 	protected Discussion() {
 		super();
 		this.id = -1;

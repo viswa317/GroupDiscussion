@@ -4,9 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Register</title>
 </head>
 <body>
-
+<form action="../member/register" method="post">
+	<input name="firstName">
+	<input name="lastName">
+	<button>Submit</button>
+</form>
 </body>
 </html>

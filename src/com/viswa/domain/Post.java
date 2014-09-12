@@ -4,12 +4,14 @@ import java.util.Date;
 
 public class Post {
 
-	private long id;
 	private String postText;
 	private Date createdDate;
 	private User owner;
 	private Discussion discussion;
 	
+	//For Hibernate
+	private long id = -1;
+
 	protected Post() {
 		super();
 		this.id = -1;

@@ -2,9 +2,11 @@ package com.viswa.domain;
 
 public class Feature {
 
-	private long id;
 	private String featureName;
 	
+	//For Hibernate
+	private long id = -1;
+
 	protected Feature() {
 		super();
 		this.id = -1;
